@@ -6,7 +6,7 @@ import org.testng.Assert;
 
 public class Cart extends BasePage {
 	private final By cart = By.xpath("//a[@id='hlb-view-cart-announce']");
-    private final By product_one = By.xpath("//div[@data-asin='B000F8EW6U']/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/ul/li[1]/span[1]/a[1]/span[1]");
+    	private final By product_one = By.xpath("//div[@data-asin='B000F8EW6U']/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/ul/li[1]/span[1]/a[1]/span[1]");
 	private final By product_two = By.xpath("//div[@data-asin='B07NSSGPLJ']/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/ul/li[1]/span[1]/a[1]/span[1]");
 	
 	public Cart(final WebDriver driver) {
