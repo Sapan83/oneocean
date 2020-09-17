@@ -6,9 +6,9 @@ import org.testng.Assert;
 
 public class Cart extends BasePage {
 	private final By cart = By.xpath("//a[@id='hlb-view-cart-announce']");
-	private final By product_two_text = By.xpath("//span[@class='a-size-medium sc-product-title a-text-bold'][contains(text(),'Little Live Pets Cozy Dozy Pinki The Bear')]");
-	private final By product_one_text = By.xpath("//span[@class='a-size-medium sc-product-title a-text-bold'][contains(text(),'Ty Beanie Baby March Aquamarine Birthstone Teddy')]");
-
+    private final By product_one = By.xpath("//div[@data-asin='B000F8EW6U']/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/ul/li[1]/span[1]/a[1]/span[1]");
+	private final By product_two = By.xpath("//div[@data-asin='B07NSSGPLJ']/div[4]/div[1]/div[1]/div[1]/div[1]/div[2]/ul/li[1]/span[1]/a[1]/span[1]");
+	
 	public Cart(final WebDriver driver) {
 		super(driver);
 	}
@@ -18,10 +18,10 @@ public class Cart extends BasePage {
 	}
 
 	public void verifyItemsAdded(final String expectedProductOneText, final String expectedProductTwoText) throws Throwable {
-		final String productoneactual = getElementText(product_one_text);
-		final String producttwoactual = getElementText(product_two_text);
-
-		Assert.assertEquals(productoneactual, expectedProductOneText);
-		Assert.assertEquals(producttwoactual, expectedProductTwoText);
+		final String actualTextFirst = getElementText(product_one);
+		final String actualTextTwo = getElementText(product_two);
+		
+		Assert.assertEquals(actualTextFirst, expectedProductOneText);
+		Assert.assertEquals(actualTextTwo , expectedProductTwoText);
 	}
 }
